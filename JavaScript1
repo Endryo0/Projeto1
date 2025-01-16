@@ -1,0 +1,30 @@
+let nome = prompt('Qual seu nome jogador(a)?');
+console.log (`O nome do jogador é ${nome}`);
+alert(`Boas vindas ${nome}!`);
+let numeromax = 30;
+let numeroSecreto = parseInt(Math.random() * numeromax + 1);
+console.log (`O número secreto é ${numeroSecreto}.`);
+let chute;
+let tentativa = 1;
+
+//Enquanto a tentativa não for igual ao numeroSecreto, ela não irá parar.
+while (chute != numeroSecreto) {
+        chute = prompt(`Digite um número entre 1 e ${numeromax}.`);
+        //Se a tentativa fot igual ao número.
+        if (chute == numeroSecreto) {
+            break;
+        } else {
+            if (chute > numeroSecreto) {
+            alert('Tente um número menor!');
+            console.log (`Você tentou o número ${chute}`);
+        }
+         else {
+            alert('Tente um número maior!');
+            console.log (`Você tentou o número ${chute}`);
+        }
+    }
+    //++ soma mais 1
+    tentativa++;
+}
+let palavraTentativa = tentativa > 1 ? 'tentativas' : 'tentativa';
+alert(`Você acertou! com ${tentativa} ${palavraTentativa} você acertou o número secreto que é ${numeroSecreto}`);
